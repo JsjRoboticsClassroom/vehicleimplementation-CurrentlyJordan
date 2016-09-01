@@ -3,35 +3,45 @@ package nyc.c4q.abassawo;
 /**
  * Created by c4q-ac29 on 8/31/16.
  */
-public class Bicycle implements Vehicle, WheeliaAble {
+public class Bicycle implements Vehicle {
     double speed;
 
-    public Bicycle(){
-        this.speed = 0;
+
+
+    public Bicycle(double speed){
+        this.speed = speed;
     }
 
+    public void popAWheelie(int duration){
+        while(duration != 0){
+            System.out.println("I'm popping a Wheeelieee");
+
+        }
+    }
 
     @Override
     public void applyBrakes() {
+        for (double i = speed; i > 0; i--) {
+            speed--;
 
-    }
-
-    @Override
-    public void speedUp(int delta) {
-
-    }
-
-    @Override
-    public void slowDown(int delta) {
-
-    }
-
-    @Override
-    public boolean popAWheelie(int duration) {
-        while(duration != 0){
-            System.out.println("I'm poppping a wheeeelieeee");
-            duration--;
         }
-        return true;
+    }
+
+    @Override
+    public void speedUp(){
+        while(speed < 60){
+            speed++;
+        }
+    }
+
+
+
+
+    @Override
+    public void slowDown(){
+        while(speed > 100){
+            speed--;
+        }
+
     }
 }
